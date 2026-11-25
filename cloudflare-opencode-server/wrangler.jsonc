@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "liaquat-opencode-server",
+  "main": "src/index.js",
+  "compatibility_date": "2026-11-25",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "containers": [
+    {
+      "class_name": "OpenCodeContainer",
+      "scheduling_policy": "durable_object",
+      "images": { "base": { "dockerfile": "./Dockerfile" } }
+    }
+  ],
+  "durable_objects": {
+    "bindings": [{ "name": "OPENCODE_CONTAINER", "class_name": "OpenCodeContainer" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["OpenCodeContainer"] }],
+  "vars": { "INACTIVITY_TIMEOUT_MS": "86400000" }
+}
