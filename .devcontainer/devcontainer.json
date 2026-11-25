@@ -1,0 +1,12 @@
+{
+  "name": "OpenCode Mobile + Free Server",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+  "postCreateCommand": "npm install -g @opencode/cli wrangler",
+  "forwardPorts": [4096],
+  "portsAttributes": {
+    "4096": {
+      "label": "OpenCode API",
+      "onAutoForward": "ignore"
+    }
+  }
+}
