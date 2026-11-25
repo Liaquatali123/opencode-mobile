@@ -1,0 +1,12 @@
+{
+  "name": "liaquat-opencode-cloudflare-server",
+  "private": true,
+  "version": "1.0.0",
+  "description": "OpenCode server hosted on Cloudflare Containers for OpenCode Mobile",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "typecheck": "wrangler types"
+  },
+  "devDependencies": { "wrangler": "^4.50.0" }
+}
